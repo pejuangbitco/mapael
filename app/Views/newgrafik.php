@@ -1,15 +1,179 @@
-<div class="mapcontainer">
-  <div class="map">Alternative content</div>
-  <div class="areaLegend" style="margin:-50px 0 0 20px"></div>
-  <!-- <div class="areaLegendDesc" style="margin-left:20px">
-                <div class="price">
-                  <div class="pull-left" style="width:100px">Harga<br/> Terendah</div>
-                  <div class="pull-left" style="width:100px">&nbsp;</div>
-                  <div class="pull-left text-right" style="width:100px">Harga<br/> Tertinggi</div>
-                  <div class="pull-left text-center" style="width:60px">Tidak<br/> Update</div>
-                  <div class="pull-left text-center" style="width:60px">Tidak<br/> Ada Data</div>
-                </div>
-              </div> -->
+<div class="row">
+  <div class="col-12 mb-3 pb-2 text-white bg-success">
+    <div class="row align-items-center">
+      <div class="control-group col-md-3">
+        <label class="hasTip" for="commodity_id">Komoditas</label>
+        <div class="controls">
+          <select id="commodity_id" name="commodity_id" class="form-control">
+            <option value="cat-1" selected="selected">Beras</option>
+            <option value="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beras Kualitas Bawah I</option>
+            <option value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beras Kualitas Bawah II</option>
+            <option value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beras Kualitas Medium I</option>
+            <option value="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beras Kualitas Medium II</option>
+            <option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beras Kualitas Super I</option>
+            <option value="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beras Kualitas Super II</option>
+            <option value="cat-2">Daging Ayam</option>
+            <option value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daging Ayam Ras Segar</option>
+            <option value="cat-3">Daging Sapi</option>
+            <option value="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daging Sapi Kualitas 1</option>
+            <option value="9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daging Sapi Kualitas 2</option>
+            <option value="cat-4">Telur Ayam</option>
+            <option value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Telur Ayam Ras Segar
+            </option>
+            <option value="cat-5">Bawang Merah</option>
+            <option value="11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bawang Merah Ukuran Sedang</option>
+            <option value="cat-6">Bawang Putih</option>
+            <option value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bawang Putih Ukuran Sedang</option>
+            <option value="cat-7">Cabai Merah</option>
+            <option value="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cabai Merah Besar</option>
+            <option value="14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cabai Merah Keriting </option>
+            <option value="cat-8">Cabai Rawit</option>
+            <option value="15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cabai Rawit Hijau</option>
+            <option value="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cabai Rawit Merah</option>
+            <option value="cat-9">Minyak Goreng</option>
+            <option value="17">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minyak Goreng Curah</option>
+            <option value="18">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minyak Goreng Kemasan Bermerk 1</option>
+            <option value="19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minyak Goreng Kemasan Bermerk 2</option>
+            <option value="cat-10">Gula Pasir</option>
+            <option value="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gula Pasir Kualitas Premium</option>
+            <option value="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gula Pasir Lokal</option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group col-md-2">
+        <label class="hasTip" for="price_type_id">Jenis Pasar</label>
+        <div class="controls">
+          <select id="price_type_id" name="price_type_id" class="form-control">
+            <option value="1" selected="selected">Pasar Tradisional</option>
+            <option value="2">Pasar Modern</option>
+            <option value="3">Pedagang Besar</option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group col-md-2">
+        <label class="hasTip" for="data_type">Jenis Informasi Harga</label>
+        <div class="controls">
+          <select id="data_type" name="data_type" class="form-control">
+            <option value="price">Perbandingan Harga</option>
+            <option value="fluctuation">Perubahan Harga (Inflasi Daerah)</option>
+            <option value="fluctuation2">Perubahan Harga (Inflasi Nasional)</option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group col-md-2">
+        <label class="hasTip" for="date">Tanggal</label>
+        <div class="controls">
+          <div class="input-group date" id="date_container"><span class="input-group-addon btn btn-danger" onclick="jQuery(this).next().val(null)"><i class="fa fa-times"></i></span><input type="text" class="form-control" readonly="" style="background-color:white" value="01-04-2022" id="date" name="date"><span class="input-group-addon btn btn-info"><i class="fa fa-calendar"></i></span></div>
+        </div>
+      </div>
+      <div class="control-group col-md-2">
+        <label class="hasTip" for="layout">Periode Perbandingan</label>
+        <div class="controls">
+          <select id="layout" name="layout" class="form-control" disabled="disabled">
+            <option value="default">Day to Day (DTD)</option>
+            <option value="wtw">Week to Week (WTW)</option>
+            <option value="mtm">Month to Month (MTM)</option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group col-md-1">
+        <button class="btn btn-primary btn-lg btn-block" type="submit"><i class="fa fa-fw fa-arrow-down"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="mapcontainer bg-primary">
+      <div class="map">Alternative content</div>
+      <div class="areaLegend" style="margin:-50px 0 0 20px"></div>
+      <div class="areaLegendDesc" style="margin-left:20px; width: 500px;">
+        <div class="price" style="display: inline-flex;">
+          <div class="pull-left" style="width:100px">Harga<br /> Terendah</div>
+          <div class="pull-left" style="width:300px">&nbsp;</div>
+          <div class="pull-left text-right" style="width:100px; float: right;">Harga<br /> Tertinggi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>Provinsi</td>
+          <td>Harga</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aceh</td>
+          <td>10.000</td>
+        </tr>
+        <tr>
+          <td>Aceh</td>
+          <td>10.000</td>
+        </tr>
+        <tr>
+          <td>Aceh</td>
+          <td>10.000</td>
+        </tr>
+        <tr>
+          <td>Aceh</td>
+          <td>10.000</td>
+        </tr>
+        <tr>
+          <td>Aceh</td>
+          <td>10.000</td>
+        </tr>
+        <tr>
+          <td>Aceh</td>
+          <td>10.000</td>
+        </tr>
+        <tr>
+          <td>Aceh</td>
+          <td>10.000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="card">
+      <!-- <div class="card-header">
+            <a href=<?= base_url("Product/create") ?> class="btn btn-success">Create Data</a>
+          </div> -->
+      <!-- /.card-header -->
+      <div class="card-body">
+        <!-- chart  -->
+        <div class="row">
+          <div class="col-3">
+            <h6 class="text-center">harga terendah</h6>
+            <div id="chart1"></div>
+
+          </div>
+          <div class="col-3">
+            <h6 class="text-center">harga rendah</h6>
+            <div id="chart2"></div>
+
+          </div>
+          <div class="col-3">
+            <h6 class="text-center">harga sedang</h6>
+            <div id="chart3"></div>
+
+          </div>
+          <div class="col-3">
+            <h6 class="text-center">harga tinggi</h6>
+            <div id="chart4"></div>
+
+          </div>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- /.col -->
 </div>
 
 <!-- Modal -->
@@ -17,13 +181,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title text-dark" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div id="containerModal"></div>
+        <div id="containerModal" class="text-dark"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -376,7 +540,7 @@
             legendSpecificAttrs: {
               "stroke-width": 0,
               height: 10,
-              width: 60
+              width: 100
             }
           }, {
             min: 2,
@@ -393,7 +557,7 @@
             legendSpecificAttrs: {
               "stroke-width": 0,
               height: 10,
-              width: 60
+              width: 100
             }
           }, {
             min: 3,
@@ -410,7 +574,7 @@
             legendSpecificAttrs: {
               "stroke-width": 0,
               height: 10,
-              width: 60
+              width: 100
             }
           }, {
             min: 4,
@@ -427,7 +591,7 @@
             legendSpecificAttrs: {
               "stroke-width": 0,
               height: 10,
-              width: 60
+              width: 100
             }
           }, {
             min: 5,
@@ -444,41 +608,7 @@
             legendSpecificAttrs: {
               "stroke-width": 0,
               height: 10,
-              width: 60
-            }
-          }, {
-            min: 6,
-            max: 6,
-            label: '',
-            attrs: {
-              fill: "#BBB"
-            },
-            attrsHover: {
-              fill: "#BBB",
-              stroke: "#CCC",
-              "stroke-width": 3
-            },
-            legendSpecificAttrs: {
-              "stroke-width": 0,
-              height: 10,
-              width: 60
-            }
-          }, {
-            min: 0,
-            max: 0,
-            label: ' ',
-            attrs: {
-              fill: "#FFF"
-            },
-            attrsHover: {
-              fill: "#FFFFFF",
-              stroke: "#A3A3A3",
-              "stroke-width": 3
-            },
-            legendSpecificAttrs: {
-              "stroke-width": 0,
-              height: 10,
-              width: 60
+              width: 100
             }
           }]
         }
@@ -546,5 +676,126 @@
       animDuration: 300,
     }])
 
+  });
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    var chart1 = c3.generate({
+      size: 200,
+      bindto: '#chart1',
+      data: {
+        // iris data from R
+        columns: [
+          ['data1', 30],
+          ['data2', 120],
+          ['data3', 30],
+          ['data4', 120],
+          ['data5', 30],
+          ['data6', 120],
+          ['data7', 30],
+          ['data8', 120],
+          ['data9', 30],
+          ['data10', 120],
+        ],
+        type: 'pie',
+        onclick: function(d, i) {
+          console.log("onclick", d, i, 'ares', areas);
+        },
+        onmouseover: function(d, i) {
+          console.log("onmouseover", d, i);
+        },
+        onmouseout: function(d, i) {
+          console.log("onmouseout", d, i);
+        }
+      }
+    });
+
+    var chart2 = c3.generate({
+      bindto: '#chart2',
+      data: {
+        // iris data from R
+        columns: [
+          ['data1', 30],
+          ['data2', 300],
+          ['data3', 56],
+          ['data4', 120],
+          ['data5', 23],
+          ['data6', 120],
+          ['data7', 88],
+          ['data8', 120],
+          ['data9', 90],
+          ['data10', 120],
+        ],
+        type: 'pie',
+        onclick: function(d, i) {
+          console.log("onclick", d, i);
+        },
+        onmouseover: function(d, i) {
+          console.log("onmouseover", d, i);
+        },
+        onmouseout: function(d, i) {
+          console.log("onmouseout", d, i);
+        }
+      }
+    });
+
+    var chart3 = c3.generate({
+      bindto: '#chart3',
+      data: {
+        // iris data from R
+        columns: [
+          ['data1', 55],
+          ['data2', 120],
+          ['data3', 66],
+          ['data4', 77],
+          ['data5', 30],
+          ['data6', 120],
+          ['data7', 72],
+          ['data8', 120],
+          ['data9', 30],
+          ['data10', 120],
+        ],
+        type: 'pie',
+        onclick: function(d, i) {
+          console.log("onclick", d, i);
+        },
+        onmouseover: function(d, i) {
+          console.log("onmouseover", d, i);
+        },
+        onmouseout: function(d, i) {
+          console.log("onmouseout", d, i);
+        }
+      }
+    });
+
+    var chart4 = c3.generate({
+      bindto: '#chart4',
+      data: {
+        // iris data from R
+        columns: [
+          ['data1', 23],
+          ['data2', 120],
+          ['data3', 46],
+          ['data4', 120],
+          ['data5', 71],
+          ['data6', 120],
+          ['data7', 22],
+          ['data8', 120],
+          ['data9', 30],
+          ['data10', 120],
+        ],
+        type: 'pie',
+        onclick: function(d, i) {
+          console.log("onclick", d, i);
+        },
+        onmouseover: function(d, i) {
+          console.log("onmouseover", d, i);
+        },
+        onmouseout: function(d, i) {
+          console.log("onmouseout", d, i);
+        }
+      }
+    });
   });
 </script>

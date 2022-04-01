@@ -42,7 +42,7 @@
             <!-- chart  -->
             <div class="row">
               <div class="col-3">
-              <h6 class="text-center">harga sangat rendah</h6>
+              <h6 class="text-center">harga terendah</h6>
               <div id="chart1"></div>
 
               </div>
