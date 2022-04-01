@@ -8,19 +8,20 @@ class Home extends BaseController
 {
 	function __construct()
 	{
-		helper('url');
-    $this->api = 'http://localhost:5000/api/inventory/';
-		$this->client = \Config\Services::curlrequest();
+		// helper('url');
+    // $this->api = 'http://localhost:5000/api/inventory/';
+		// $this->client = \Config\Services::curlrequest();
 	}
 
 	public function index()
 	{
-		$response = $this->client->get($this->api);
-		return view('layout', [
-			'title' => 'Data Inventory',
-      'page'  => 'content_inventory.php',
-			'data'	=> json_decode($response->getBody(), true)
-		]);
+		echo 'aa';
+		// $response = $this->client->get($this->api);
+		// return view('layout', [
+		// 	'title' => 'Data Inventory',
+    //   'page'  => 'content_inventory.php',
+		// 	'data'	=> json_decode($response->getBody(), true)
+		// ]);
 	}
 
 	public function filter()
