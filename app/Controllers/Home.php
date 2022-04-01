@@ -15,7 +15,7 @@ class Home extends BaseController
 
 	public function index()
 	{
-		echo 'aa';
+		echo phpinfo();
 		// $response = $this->client->get($this->api);
 		// return view('layout', [
 		// 	'title' => 'Data Inventory',
