@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-12 mb-3 pb-2 text-white bg-success">
     <div class="row align-items-center">
-      <div class="control-group col-md-3">
+      <div class="control-group col-3">
         <label class="hasTip" for="commodity_id">Komoditas</label>
         <div class="controls">
           <select id="commodity_id" name="commodity_id" class="form-control">
@@ -40,7 +40,7 @@
           </select>
         </div>
       </div>
-      <div class="control-group col-md-2">
+      <div class="control-group col-2">
         <label class="hasTip" for="price_type_id">Jenis Pasar</label>
         <div class="controls">
           <select id="price_type_id" name="price_type_id" class="form-control">
@@ -50,7 +50,7 @@
           </select>
         </div>
       </div>
-      <div class="control-group col-md-2">
+      <div class="control-group col-2">
         <label class="hasTip" for="data_type">Jenis Informasi Harga</label>
         <div class="controls">
           <select id="data_type" name="data_type" class="form-control">
@@ -60,13 +60,13 @@
           </select>
         </div>
       </div>
-      <div class="control-group col-md-2">
+      <div class="control-group col-2">
         <label class="hasTip" for="date">Tanggal</label>
         <div class="controls">
           <div class="input-group date" id="date_container"><span class="input-group-addon btn btn-danger" onclick="jQuery(this).next().val(null)"><i class="fa fa-times"></i></span><input type="text" class="form-control" readonly="" style="background-color:white" value="01-04-2022" id="date" name="date"><span class="input-group-addon btn btn-info"><i class="fa fa-calendar"></i></span></div>
         </div>
       </div>
-      <div class="control-group col-md-2">
+      <div class="control-group col-2">
         <label class="hasTip" for="layout">Periode Perbandingan</label>
         <div class="controls">
           <select id="layout" name="layout" class="form-control" disabled="disabled">
@@ -76,7 +76,7 @@
           </select>
         </div>
       </div>
-      <div class="control-group col-md-1">
+      <div class="control-group col-1">
         <button class="btn btn-primary btn-lg btn-block" type="submit"><i class="fa fa-fw fa-arrow-down"></i></button>
       </div>
     </div>
@@ -95,42 +95,17 @@
     </div>
   </div>
   <div class="col-3">
-    <table class="table table-bordered">
+    <table class="table table-bordered" style="max-height: 390px;
+  overflow: auto;
+  display:inline-block;">
       <thead>
         <tr>
           <td>Provinsi</td>
           <td>Harga</td>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Aceh</td>
-          <td>10.000</td>
-        </tr>
-        <tr>
-          <td>Aceh</td>
-          <td>10.000</td>
-        </tr>
-        <tr>
-          <td>Aceh</td>
-          <td>10.000</td>
-        </tr>
-        <tr>
-          <td>Aceh</td>
-          <td>10.000</td>
-        </tr>
-        <tr>
-          <td>Aceh</td>
-          <td>10.000</td>
-        </tr>
-        <tr>
-          <td>Aceh</td>
-          <td>10.000</td>
-        </tr>
-        <tr>
-          <td>Aceh</td>
-          <td>10.000</td>
-        </tr>
+      <tbody id="tableData">
+        
       </tbody>
     </table>
   </div>
@@ -198,6 +173,15 @@
 
 <script type="text/javascript">
   $(function() {
+    var tableDB = {"tableData":[{"value":"9350","name":"Nusa Tenggara Barat","display":"Rp9.350","id":"18"},{"value":"9900","name":"Sulawesi Selatan","display":"Rp9.900","id":"26"},{"value":"9950","name":"Sulawesi Barat","display":"Rp9.950","id":"30"},{"value":"10350","name":"Aceh","display":"Rp10.350","id":"1"},{"value":"10600","name":"Jawa Timur","display":"Rp10.600","id":"16"},{"value":"10600","name":"Sulawesi Tengah","display":"Rp10.600","id":"28"},{"value":"10950","name":"Jawa Tengah","display":"Rp10.950","id":"14"},{"value":"11000","name":"Gorontalo","display":"Rp11.000","id":"25"},{"value":"11050","name":"Sulawesi Tenggara","display":"Rp11.050","id":"27"},{"value":"11250","name":"DI Yogyakarta","display":"Rp11.250","id":"15"},{"value":"11250","name":"Sumatera Utara","display":"Rp11.250","id":"2"},{"value":"11300","name":"Sumatera Selatan","display":"Rp11.300","id":"8"},{"value":"11350","name":"Bengkulu","display":"Rp11.350","id":"7"},{"value":"11350","name":"Jawa Barat","display":"Rp11.350","id":"12"},{"value":"11400","name":"Banten","display":"Rp11.400","id":"11"},{"value":"11400","name":"Lampung","display":"Rp11.400","id":"10"},{"value":"11450","name":"Nusa Tenggara Timur","display":"Rp11.450","id":"19"},{"value":"11500","name":"Sulawesi Utara","display":"Rp11.500","id":"29"},{"value":"11650","name":"Bali","display":"Rp11.650","id":"17"},{"value":"11700","name":"Kepulauan Bangka Belitung","display":"Rp11.700","id":"9"},{"value":"11800","name":"Jambi","display":"Rp11.800","id":"6"},{"value":"12200","name":"Riau","display":"Rp12.200","id":"4"},{"value":"12300","name":"Kalimantan Timur","display":"Rp12.300","id":"23"},{"value":"12300","name":"Papua","display":"Rp12.300","id":"33"},{"value":"12650","name":"Maluku Utara","display":"Rp12.650","id":"32"},{"value":"13100","name":"Kepulauan Riau","display":"Rp13.100","id":"5"},{"value":"13150","name":"Kalimantan Selatan","display":"Rp13.150","id":"21"},{"value":"13200","name":"Maluku","display":"Rp13.200","id":"31"},{"value":"13200","name":"Papua Barat","display":"Rp13.200","id":"34"},{"value":"13250","name":"Sumatera Barat","display":"Rp13.250","id":"3"},{"value":"13300","name":"Kalimantan Barat","display":"Rp13.300","id":"20"},{"value":"13450","name":"DKI Jakarta","display":"Rp13.450","id":"13"},{"value":"13500","name":"Kalimantan Utara","display":"Rp13.500","id":"24"},{"value":"14100","name":"Kalimantan Tengah","display":"Rp14.100","id":"22"}]}
+    console.log('table:', tableDB)
+    let isiTable = '';
+    tableDB.tableData.forEach(el => {
+      isiTable += `<tr><td>${el.name}</td><td>${el.value}</td></tr>`;
+    });
+    
+    $("#tableData").html(isiTable);
+
     var areas = {
       "ID-AC": {
         "tooltip": {
