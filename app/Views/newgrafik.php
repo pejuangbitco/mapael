@@ -82,7 +82,7 @@
     </div>
   </div>
   <div class="col-9">
-    <div class="mapcontainer bg-primary">
+    <div class="mapcontainer" style="background-image: radial-gradient(circle, #3f91cd, #0e314b);">
       <div class="map">Alternative content</div>
       <div class="areaLegend" style="margin:-50px 0 0 20px"></div>
       <div class="areaLegendDesc" style="margin-left:20px; width: 500px;">
