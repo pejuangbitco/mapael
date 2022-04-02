@@ -87,9 +87,9 @@
       <div class="areaLegend" style="margin:-50px 0 0 20px"></div>
       <div class="areaLegendDesc" style="margin-left:20px; width: 500px;">
         <div class="price" style="display: inline-flex;">
-          <div class="pull-left" style="width:100px">Harga<br /> Terendah</div>
-          <div class="pull-left" style="width:300px">&nbsp;</div>
-          <div class="pull-left text-right" style="width:100px; float: right;">Harga<br /> Tertinggi</div>
+          <div class="text-white" style="width:100px">Harga<br /> Terendah</div>
+          <div class="" style="width:300px">&nbsp;</div>
+          <div class="text-white text-right" style="width:100px; float: right;">Harga<br /> Tertinggi</div>
         </div>
       </div>
     </div>
